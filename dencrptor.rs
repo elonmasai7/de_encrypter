@@ -16,15 +16,15 @@ fn main() {
 
    
     let status = Command::new("unrar")
-        .arg("x")            // x: Extract files with full path
-        .arg("-p")           // -p: Provide password
-        .arg(password)       // Password entered by user
-        .arg(rar_file)       // The RAR file to decrypt
-        .arg(output_dir)     // Output directory for extraction
+        .arg("x")           
+        .arg("-p")          
+        .arg(password)       
+        .arg(rar_file)      
+        .arg(output_dir)     
         .status()
         .expect("Failed to execute unrar");
 
-    // Check if the extraction was successful
+    
     if status.success() {
         println!("Successfully decrypted and extracted the RAR file!");
     } else {
